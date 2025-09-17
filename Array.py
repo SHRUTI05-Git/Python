@@ -15,7 +15,7 @@ for i in b:
 print("\n\nElement at index 2:", b[2])
 
 #  Insert element
-b.insert(2, 25)   # insert 25 at index 2
+b.insert(2, 25)   
 print("After inserting 25 at index 2:", b.tolist())
 
 #  Append element

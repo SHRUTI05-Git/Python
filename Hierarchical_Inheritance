@@ -1,0 +1,44 @@
+# Base Class
+class Vehicle:
+    def show_vehicle(self):
+        print("This is a vehicle.")
+
+# Derived Class 1
+class Bikes(Vehicle):
+    def show_bike(self):
+        print("This is a bike.")
+
+# Derived Class 2
+class Cars(Vehicle):
+    def show_car(self):
+        print("This is a car.")
+
+# Derived Class 3
+class Buses(Vehicle):
+    def show_bus(self):
+        print("This is a bus.")
+
+# Derived Class 4
+class Trucks(Vehicle):
+    def show_truck(self):
+        print("This is a truck.")
+
+
+# Objects of different derived classes
+b = Bikes()
+c = Cars()
+bu = Buses()
+t = Trucks()
+
+# Accessing base + derived methods
+b.show_vehicle()
+b.show_bike()
+
+c.show_vehicle()
+c.show_car()
+
+bu.show_vehicle()
+bu.show_bus()
+
+t.show_vehicle()
+t.show_truck()

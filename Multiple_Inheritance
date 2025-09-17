@@ -1,0 +1,24 @@
+# Base Class 1
+class Wheel:
+    def show_wheel(self):
+        print("This is a wheel.")
+
+# Base Class 2
+class Rubber:
+    def show_rubber(self):
+        print("This is made of rubber.")
+
+# Derived Class (inherits from Wheel and Rubber)
+class Tyre(Wheel, Rubber):
+    def show_tyre(self):
+        print("This is a tyre.")
+
+# Create object of Tyre
+t = Tyre()
+
+# Access methods from both parent classes
+t.show_wheel()
+t.show_rubber()
+
+# Access derived class method
+t.show_tyre()

@@ -1,0 +1,53 @@
+# Base Class
+class Project:
+    def __init__(self, projectId, projectName):
+        self.projectId = projectId
+        self.projectName = projectName
+
+    def getProjectId(self):
+        return self.projectId
+    
+    def setProjectId(self, projectId):
+        self.projectId = projectId
+
+    def getProjectName(self):
+        return self.projectName
+    
+    def setProjectName(self, projectName):
+        self.projectName = projectName
+
+
+# Derived Class from Project
+class Module(Project):
+    def __init__(self, projectId, projectName, moduleName):
+        super().__init__(projectId, projectName)   # Call Project constructor
+        self.moduleName = moduleName
+
+    def getModuleName(self):
+        return self.moduleName
+    
+    def setModuleName(self, moduleName):
+        self.moduleName = moduleName
+
+
+# Derived Class from Module (multi-level)
+class Task(Module):
+    def __init__(self, projectId, projectName, moduleName, taskName):
+        super().__init__(projectId, projectName, moduleName)  # Call Module constructor
+        self.taskName = taskName
+
+    def getTaskName(self):
+        return self.taskName
+    
+    def setTaskName(self, taskName):
+        self.taskName = taskName
+
+
+# Create object 
+t = Task(101, "Library System", "Authentication Module", "Login Task")
+
+# Accessing methods from all levels
+print("Project ID:", t.getProjectId())
+print("Project Name:", t.getProjectName())
+print("Module Name:", t.getModuleName())
+print("Task Name:", t.getTaskName())

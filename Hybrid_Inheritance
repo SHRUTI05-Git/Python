@@ -1,0 +1,44 @@
+# Base Class
+class Student:
+    def __init__(self, name):
+        self.name = name
+    
+    def show_student(self):
+        print(f"Student Name: {self.name}")
+
+# Derived Class (Single Inheritance from Student)
+class Exam(Student):
+    def __init__(self, name, marks):
+        super().__init__(name)   # call parent constructor
+        self.marks = marks
+
+    def show_exam(self):
+        print(f"Exam Marks: {self.marks}")
+
+# Another Base Class
+class Project:
+    def __init__(self, project_title):
+        self.project_title = project_title
+
+    def show_project(self):
+        print(f"Project Title: {self.project_title}")
+
+# Derived Class with Multiple Inheritance (from Exam & Project)
+class Result(Exam, Project):
+    def __init__(self, name, marks, project_title, grade):
+        Exam.__init__(self, name, marks)       # initialize Exam
+        Project.__init__(self, project_title)  # initialize Project
+        self.grade = grade
+
+    def show_result(self):
+        print(f"Final Grade: {self.grade}")
+
+
+# Create object of Result
+r = Result("Shruti", 85, "AI Project", "A")
+
+# Access methods from all parent classes
+r.show_student()
+r.show_exam()
+r.show_project()
+r.show_result()
